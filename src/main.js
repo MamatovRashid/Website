@@ -5,8 +5,12 @@ import store from './store'
 
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import locale from 'element-ui/lib/locale/lang/en'
 import './assets/tailwind.css'
-Vue.use(ElementUI);
+import ThemifyIcon from "vue-themify-icons"
+Vue.use(ElementUI, { locale });
+// Vue.use(ElementUI);
+Vue.use(ThemifyIcon);
 
 Vue.config.productionTip = false
 
