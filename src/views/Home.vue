@@ -1,12 +1,16 @@
 <template>
-  <div class="home p-2 bg-gray-400">
-    Home
+  <div class="home p-2">
+    <Home1 />
   </div>
 </template>
 
 <script>
+import Home1 from '../components/Home1.vue';
 export default {
-    name: 'Home'
+    name: 'Home',
+    components: {
+      Home1
+    }
 }
 </script>
 
