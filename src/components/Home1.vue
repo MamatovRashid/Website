@@ -111,7 +111,7 @@
         ></path>
       </svg>
     </div>
-    <div class="w-1/3 px-4">
+    <div class="w-1/3 px-4 max-w-lg">
         <div class="head">
             <h1 class="text-2xl mb-4">Жами</h1>
         </div>
@@ -149,10 +149,26 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'UzbMap',
+  data() {
+    return {
+      infotext: "Жами"
+    }
+  },
+}
+</script>
+
 <style lang="scss" scoped>
 .uzb-map {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+}
+path:hover{
+  fill: #38576d
+}
+#aral{
+  fill: #61bef3;
 }
 </style>

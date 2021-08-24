@@ -1,6 +1,6 @@
 <template>
-  <header class="fixed left-28 right-72">
-    <div class="h-20 bg-white flex items-center">
+  <header class="fixed z-10 w-full header">
+    <div class="bg-white flex items-center header-box">
       <div class="header-body flex px-6 w-full">
         <form class="flex">
           <el-input
@@ -38,16 +38,19 @@
           </button>
         </form>
 
-        <button @click="toggle = !toggle" class="ml-10 text-blue-600">
+        <button @click="toggle = false" class="ml-10 text-blue-600">
           Кенгайтирилган қидирув
         </button>
       </div>
     </div>
     <div
-      class="searchbox absolute bg-white w-full top-full px-6 py-3 left-0"
+      class="searchbox absolute top-0 pl-6 w-full py-6"
       :class="{ hide: toggle }"
     >
-      <h1 class="text-3xl mb-4">Ҳужжатни қидириш</h1>
+      <div class="flex items-center justify-between">
+        <h1 class="text-3xl mb-4">Ҳужжатни қидириш</h1>
+        <button class="bg-gray-500 text-white p-1.5 flex rounded" @click="toggle = true"><i class="ti-close"></i></button>
+      </div>
       <div class="box max-w-5xl">
         <div class="grid grid-cols-12 gap-y-4 gap-x-2.5">
           <div class="col-span-3">
@@ -140,6 +143,7 @@
               :placeholder="dataText"
               v-model="data1"
               style="width: 100%"
+              format="dd.MM.yyyy"
             ></el-date-picker>
           </div>
           <div class="col-span-2" v-if="checked">
@@ -149,6 +153,7 @@
               placeholder="сана гача"
               v-model="data2"
               style="width: 100%"
+              format="dd.MM.yyyy"
             ></el-date-picker>
           </div>
           <div class="col-span-2 flex items-center">
@@ -290,12 +295,21 @@ export default {
 <style lang="scss" scoped>
 .searchbox {
   transition: all 1s ease;
-  z-index: -1;
+  z-index: 1;
+  padding-right: 434px;
+  background: rgb(254, 254, 254);
+  box-shadow: 0 -4px 10px 0 #000;
 }
 .hide {
   transform: translateY(-800px);
 }
 .el-input__inner {
   border: 1px solid #e1e1e1 !important;
+}
+.header{
+  padding-left: 110px;
+}
+.header-box{
+  height: 90px;
 }
 </style>

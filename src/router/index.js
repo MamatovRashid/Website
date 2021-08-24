@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Documents from '../views/Documents.vue'
+import File from '../views/File.vue'
 
 Vue.use(VueRouter)
 
@@ -17,6 +18,11 @@ const routes = [
     path: '/doc',
     name: 'Documents',
     component: Documents
+  },
+  {
+    path: '/file/:id',
+    name: 'File',
+    component: File
   },
   // {
     // path: '/about',
