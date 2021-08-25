@@ -4,15 +4,15 @@
     class="
       modal
       fixed
-      z-40
+      z-50
       w-full
       h-full
       top-0
       left-0
-      bg-black bg-opacity-25
       overflow-y-auto
     "
   >
+    <div class="bg-black bg-opacity-25 w-full h-full absolute" @click="$emit('hide'), resetForm('ruleForm')"></div>
     <div
       class="
         modal-body
@@ -23,6 +23,8 @@
         bg-white
         m-auto
         my-9
+        relative
+        z-10
       "
     >
       <div class="modal-head flex flex-row items-center justify-between mb-4">
@@ -77,16 +79,16 @@
             </el-input>
           </el-form-item>
 
-          <el-form-item size="medium" prop="docName" class="mb-0 col-span-6">
+          <el-form-item size="medium" prop="krNum" class="mb-0 col-span-3">
             <el-input
-              placeholder="Ҳужжат номи"
-              v-model="ruleForm.docName"
+              placeholder="Кирим рақами"
+              v-model="ruleForm.krNum"
               clearable
             >
             </el-input>
           </el-form-item>
 
-          <el-form-item size="medium" prop="Dep" class="mb-0 col-span-6">
+          <el-form-item size="medium" prop="Dep" class="mb-0 col-span-4">
             <el-cascader
               v-model="ruleForm.Dep"
               :show-all-levels="false"
@@ -97,6 +99,15 @@
               collapse-tags
               clearable
             ></el-cascader>
+          </el-form-item>
+
+          <el-form-item size="medium" prop="docName" class="mb-0 col-span-5">
+            <el-input
+              placeholder="Ҳужжат номи"
+              v-model="ruleForm.docName"
+              clearable
+            >
+            </el-input>
           </el-form-item>
 
           <el-form-item size="medium" prop="type" class="mb-0 col-span-3">
@@ -274,10 +285,11 @@ export default {
       ],
       ruleForm: {
         docName: "",
-        docNum: null,
-        opNum: null,
-        fondNum: null,
-        YJNum: null,
+        docNum: "",
+        opNum: "",
+        fondNum: "",
+        YJNum: "",
+        krNum: "",
         Dep: "",
         type: "",
         lang: "",
@@ -325,6 +337,13 @@ export default {
           },
         ],
         YJNum: [
+          {
+            required: true,
+            message: "Маълумот киритинг",
+            trigger: "blur",
+          },
+        ],
+        krNum: [
           {
             required: true,
             message: "Маълумот киритинг",

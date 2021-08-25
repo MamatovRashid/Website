@@ -1,6 +1,7 @@
 <template>
+<div>
   <div
-    class="bg-white fixed right-0 h-screen top-0 border-l p-6 pr-0 z-20 right"
+    class="bg-white fixed right-0 h-screen top-0 border-l p-6 pr-0 z-10 right"
   >
     <div class="sitebar flex flex-col h-full">
       <div class="sitebar-header">
@@ -125,8 +126,10 @@
         </button>
       </div>
     </div>
-    <DataEnter :show="toggle" @hide="hideToggle" />
   </div>
+    <DataEnter :show="toggle" @hide="hideToggle" />
+
+</div>
 </template>
 <script>
 import DataEnter from './DataEnter.vue'

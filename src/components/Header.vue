@@ -49,7 +49,12 @@
     >
       <div class="flex items-center justify-between">
         <h1 class="text-3xl mb-4">Ҳужжатни қидириш</h1>
-        <button class="bg-gray-500 text-white p-1.5 flex rounded" @click="toggle = true"><i class="ti-close"></i></button>
+        <button
+          class="bg-gray-500 text-white p-1.5 flex rounded"
+          @click="toggle = true"
+        >
+          <i class="ti-close"></i>
+        </button>
       </div>
       <div class="box max-w-5xl">
         <div class="grid grid-cols-12 gap-y-4 gap-x-2.5">
@@ -89,16 +94,16 @@
             >
             </el-input>
           </div>
-          <div class="col-span-6">
+          <div class="col-span-3">
             <el-input
               size="medium"
-              placeholder="Ҳужжат номи"
-              v-model="docName"
+              placeholder="Кирим рақами"
+              v-model="krNum"
               clearable
             >
             </el-input>
           </div>
-          <div class="col-span-6">
+          <div class="col-span-4">
             <el-select
               clearable
               size="medium"
@@ -109,6 +114,15 @@
               <el-option label="Департамент1" value="Департамент1"></el-option>
               <el-option label="Департамент2" value="Департамент2"></el-option>
             </el-select>
+          </div>
+          <div class="col-span-5">
+            <el-input
+              size="medium"
+              placeholder="Ҳужжат номи"
+              v-model="docName"
+              clearable
+            >
+            </el-input>
           </div>
           <div class="col-span-3">
             <el-select
@@ -254,10 +268,11 @@ export default {
       toggle: true,
       checked: false,
       docName: "",
-      docNum: null,
-      opNum: null,
-      fondNum: null,
-      YJNum: null,
+      docNum: "",
+      opNum: "",
+      fondNum: "",
+      YJNum: "",
+      krNum: "",
       Dep: "",
       type: "",
       lang: "",
@@ -289,6 +304,11 @@ export default {
       }
     },
   },
+  watch: {
+    "$route.name": function () {
+      this.toggle = true
+    },
+  },
 };
 </script>
 
@@ -306,10 +326,10 @@ export default {
 .el-input__inner {
   border: 1px solid #e1e1e1 !important;
 }
-.header{
+.header {
   padding-left: 110px;
 }
-.header-box{
+.header-box {
   height: 90px;
 }
 </style>
