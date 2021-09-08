@@ -1,18 +1,12 @@
 <template>
   <div
     v-show="show"
-    class="
-      modal
-      fixed
-      z-50
-      w-full
-      h-full
-      top-0
-      left-0
-      overflow-y-auto
-    "
+    class="modal fixed z-50 w-full h-full top-0 left-0 overflow-y-auto"
   >
-    <div class="bg-black bg-opacity-25 w-full h-full absolute" @click="$emit('hide'), resetForm('ruleForm')"></div>
+    <div
+      class="bg-black bg-opacity-25 w-full h-full fixed"
+      @click="$emit('hide'), resetForm('ruleForm')"
+    ></div>
     <div
       class="
         modal-body
@@ -41,9 +35,9 @@
           :model="ruleForm"
           :rules="rules"
           ref="ruleForm"
-          class="demo-ruleForm grid grid-cols-12 gap-x-4 gap-y-4"
+          class="demo-ruleForm -m-2 flex flex-wrap"
         >
-          <el-form-item size="medium" prop="docNum" class="mb-0 col-span-3">
+          <el-form-item size="medium" prop="docNum" class="mb-4 px-2 w-1/4">
             <el-input
               placeholder="Ҳужжат рақами"
               v-model="ruleForm.docNum"
@@ -52,34 +46,59 @@
             </el-input>
           </el-form-item>
 
-          <el-form-item size="medium" prop="opNum" class="mb-0 col-span-3">
-            <el-input
-              placeholder="Опись рақами"
+          <el-form-item size="medium" prop="opNum" class="mb-4 px-2 w-1/4">
+            <el-select
               v-model="ruleForm.opNum"
+              filterable
+              placeholder="Опись рақами"
               clearable
             >
-            </el-input>
+              <el-option
+                v-for="item in opis"
+                :key="item.id"
+                :label="item.opis_number"
+                :value="item.id"
+              >
+              </el-option>
+            </el-select>
           </el-form-item>
 
-          <el-form-item size="medium" prop="fondNum" class="mb-0 col-span-3">
-            <el-input
-              placeholder="Фонд рақами"
+          <el-form-item size="medium" prop="fondNum" class="mb-4 px-2 w-1/4">
+            <el-select
               v-model="ruleForm.fondNum"
+              filterable
+              placeholder="Фонд рақами"
               clearable
             >
-            </el-input>
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              >
+              </el-option>
+            </el-select>
           </el-form-item>
 
-          <el-form-item size="medium" prop="YJNum" class="mb-0 col-span-3">
-            <el-input
-              placeholder="Йиғмажилд рақами"
+          <el-form-item size="medium" prop="YJNum" class="mb-4 px-2 w-1/4">
+            <el-select
+              class="w-full"
               v-model="ruleForm.YJNum"
+              filterable
+              placeholder="Йиғмажилд рақами"
               clearable
             >
-            </el-input>
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              >
+              </el-option>
+            </el-select>
           </el-form-item>
 
-          <el-form-item size="medium" prop="krNum" class="mb-0 col-span-3">
+          <el-form-item size="medium" prop="krNum" class="mb-4 px-2 w-1/4">
             <el-input
               placeholder="Кирим рақами"
               v-model="ruleForm.krNum"
@@ -88,7 +107,7 @@
             </el-input>
           </el-form-item>
 
-          <el-form-item size="medium" prop="Dep" class="mb-0 col-span-4">
+          <el-form-item size="medium" prop="Dep" class="mb-4 px-2 w-1/3">
             <el-cascader
               v-model="ruleForm.Dep"
               :show-all-levels="false"
@@ -101,7 +120,7 @@
             ></el-cascader>
           </el-form-item>
 
-          <el-form-item size="medium" prop="docName" class="mb-0 col-span-5">
+          <el-form-item size="medium" prop="docName" class="mb-4 px-2 w-5/12">
             <el-input
               placeholder="Ҳужжат номи"
               v-model="ruleForm.docName"
@@ -110,7 +129,7 @@
             </el-input>
           </el-form-item>
 
-          <el-form-item size="medium" prop="type" class="mb-0 col-span-3">
+          <el-form-item size="medium" prop="type" class="mb-4 px-2 w-1/4">
             <el-select
               clearable
               v-model="ruleForm.type"
@@ -122,7 +141,7 @@
             </el-select>
           </el-form-item>
 
-          <el-form-item size="medium" prop="lang" class="mb-0 col-span-3">
+          <el-form-item size="medium" prop="lang" class="mb-4 px-2 w-1/4">
             <el-select
               clearable
               v-model="ruleForm.lang"
@@ -136,7 +155,7 @@
             </el-select>
           </el-form-item>
 
-          <el-form-item size="medium" prop="date1" class="mb-0 col-span-3">
+          <el-form-item size="medium" prop="date1" class="mb-4 px-2 w-1/4">
             <el-date-picker
               type="date"
               placeholder="Қабул қилинган сана"
@@ -146,7 +165,7 @@
             ></el-date-picker>
           </el-form-item>
 
-          <el-form-item size="medium" prop="status" class="mb-0 col-span-3">
+          <el-form-item size="medium" prop="status" class="mb-4 px-2 w-1/4">
             <el-select
               clearable
               v-model="ruleForm.status"
@@ -158,7 +177,7 @@
             </el-select>
           </el-form-item>
 
-          <el-form-item size="medium" prop="sort" class="mb-0 col-span-6">
+          <el-form-item size="medium" prop="sort" class="mb-4 px-2 w-1/2">
             <el-select
               clearable
               v-model="ruleForm.sort"
@@ -172,7 +191,7 @@
             </el-select>
           </el-form-item>
 
-          <el-form-item size="medium" prop="vil" class="mb-0 col-span-6">
+          <el-form-item size="medium" prop="vil" class="mb-4 px-2 w-1/2">
             <el-select
               clearable
               v-model="ruleForm.vil"
@@ -198,7 +217,7 @@
             </el-select>
           </el-form-item>
 
-          <el-form-item size="medium" prop="text1" class="mb-0 col-span-12">
+          <el-form-item size="medium" prop="text1" class="mb-4 px-2 w-full">
             <el-input
               type="textarea"
               v-model="ruleForm.text1"
@@ -206,21 +225,11 @@
               placeholder="Ҳужжат аннотацияси"
             ></el-input>
           </el-form-item>
-          <el-form-item class="flex mb-0 col-span-8">
-            <el-upload
-              class="upload-demo flex items-center"
-              :limit="1"
-              ref="upload"
-              action="https://jsonplaceholder.typicode.com/posts/"
-              :auto-upload="false"
-            >
-              <el-button slot="trigger" size="small" type="primary"
-                >Файл танланг</el-button
-              >
-            </el-upload>
+          <el-form-item class="flex mb-4 px-2 w-2/3">
+            <input type="file" ref="filee" @change="aaa">
           </el-form-item>
 
-          <el-form-item size="medium" class="mb-0 col-span-4">
+          <el-form-item size="medium" class="mb-4 px-2 w-1/3">
             <el-button
               type="primary"
               class="bg-blue-700"
@@ -235,6 +244,7 @@
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   props: {
     show: {
@@ -245,6 +255,7 @@ export default {
   data() {
     return {
       props: { multiple: true },
+      opis: null,
       options: [
         {
           value: 1,
@@ -410,24 +421,40 @@ export default {
       },
     };
   },
+  mounted() {
+    axios
+      .get("http://192.168.1.103:8000/api/opis")
+      .then((res) => (this.opis = res.data))
+      .catch((error) => {
+        console.log(error);
+      });
+  },
   methods: {
+    aaa(){
+      this.ruleForm.file = this.$refs.filee.files[0]
+    },
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
+        console.log(this.ruleForm.file)
         if (valid) {
-          this.$refs.upload.submit();
-          this.$notify({
-            title: "Qo'shildi",
-            message: "Ma'lumot muaffaqiyatli qo'shildi",
-            type: "success",
-          });
-          this.resetForm(formName);
-          this.$emit("hide");
+          axios
+            .post("http://192.168.1.103:8000/api/add/", this.ruleForm)
+            .then((result) => {
+              this.$notify({
+                title: "Qo'shildi",
+                message: "Ma'lumot muaffaqiyatli qo'shildi",
+                type: "success",
+              });
+              console.log(result)
+            });
+
+          // this.resetForm(formName);
+          // this.$emit("hide");
         } else {
-            this.$notify.error({
+          this.$notify.error({
             title: "Error",
             message: "Ma'lumotni to'liq kiriting",
           });
-          console.log("error submit!!");
           return false;
         }
       });
@@ -442,10 +469,6 @@ export default {
 };
 </script>
 <style>
-.el-form-item__error {
-  padding-top: 0;
-}
-
 .modal-body {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s;

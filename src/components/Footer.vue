@@ -1,5 +1,5 @@
 <template>
-    <footer class="py-5 pl-4 flex justify-between pr-80 text-sm font-medium border-t border-gray-400">
+    <footer class="py-5 px-4 flex justify-between text-sm font-medium border-t border-gray-400">
         <div>
             © 2021 Все права защищены.
         </div>

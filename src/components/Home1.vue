@@ -1,6 +1,6 @@
 <template>
   <div class="home1 flex flex-wrap">
-    <div class="w-2/3 pl-4 max-w-5xl">
+    <div class="w-3/5 lg:w-2/3 pl-4 max-w-5xl">
       <svg class="uzb-map" stroke="#ffffff" xmlns:mapsvg="http://mapsvg.com" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 792 516" width="792.4873" height="516.87848">
         <path
         @mouseenter="mapshow($event)"  @mouseleave="toggle = false"
@@ -111,38 +111,22 @@
       </svg>
       <div class="tool-tips" :class="toggle ? 'block' : 'hidden'" ref="tool">{{ infotext }}</div>
     </div>
-    <div class="w-1/3 px-4 max-w-lg">
+    <div class="w-2/5 lg:w-1/3 px-4 max-w-lg">
         <div class="head">
             <h1 class="text-2xl mb-4">{{ infotext }}</h1>
         </div>
         <div class="body">
-            <div class="border-b px-1 pb-2 mb-2 flex justify-between">
+            <div class="border-b px-1 pb-1 mb-1.5 lg:pb-2 lg:mb-2 flex justify-between">
                 <p>Жами ҳужжатлар</p>
-                <span class="text-lg font-medium text-blue-500">123</span>
+                <span class="text-base lg:text-lg font-medium text-blue-500">123</span>
             </div>
-            <div class="border-b px-1 pb-2 mb-2 flex justify-between">
+            <div class="border-b px-1 pb-1 mb-1.5 lg:pb-2 lg:mb-2 flex justify-between">
                 <p>Жами ҳужжатлар</p>
-                <span class="text-lg font-medium text-blue-500">123</span>
+                <span class="text-base lg:text-lg font-medium text-blue-500">123</span>
             </div>
-            <div class="border-b px-1 pb-2 mb-2 flex justify-between">
+            <div class="border-b px-1 pb-1 mb-1.5 lg:pb-2 lg:mb-2 flex justify-between">
                 <p>Жами ҳужжатлар</p>
-                <span class="text-lg font-medium text-blue-500">123</span>
-            </div>
-            <div class="border-b px-1 pb-2 mb-2 flex justify-between">
-                <p>Жами ҳужжатлар</p>
-                <span class="text-lg font-medium text-blue-500">123</span>
-            </div>
-            <div class="border-b px-1 pb-2 mb-2 flex justify-between">
-                <p>Жами ҳужжатлар</p>
-                <span class="text-lg font-medium text-blue-500">123</span>
-            </div>
-            <div class="border-b px-1 pb-2 mb-2 flex justify-between">
-                <p>Жами ҳужжатлар</p>
-                <span class="text-lg font-medium text-blue-500">123</span>
-            </div>
-            <div class="border-b px-1 pb-2 mb-2 flex justify-between">
-                <p>Жами ҳужжатлар</p>
-                <span class="text-lg font-medium text-blue-500">123</span>
+                <span class="text-base lg:text-lg font-medium text-blue-500">123</span>
             </div>
         </div>
     </div>
@@ -169,7 +153,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .uzb-map {
   width: 100%;
   height: 100%;

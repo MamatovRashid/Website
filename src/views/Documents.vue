@@ -1,5 +1,5 @@
 <template>
-  <div class="doc px-6">
+  <div class="doc px-3.5 xl:px-6 w-screen">
     <div class="mt-4 mb-8">
       <el-dropdown>
         <el-button
@@ -42,7 +42,7 @@
             focus:text-black
           "
         >
-          Йил бўйича<i class="el-icon-arrow-down el-icon--right"></i>
+          Департамент бўйича<i class="el-icon-arrow-down el-icon--right"></i>
         </el-button>
         <el-dropdown-menu slot="dropdown" class="px-1">
           <div class="h-80 overflow-y-auto">
@@ -118,6 +118,56 @@
           </div>
         </el-dropdown-menu>
       </el-dropdown>
+      <el-dropdown>
+        <el-button
+          size="medium"
+          class="
+            mr-2
+            font-semibold
+            text-black
+            border-gray-400
+            hover:bg-gray-300
+            hover:text-black
+            hover:border-gray-300
+            focus:bg-gray-50
+            focus:border-gray-400
+            focus:text-black
+          "
+        >
+          Шакл бўйича<i class="el-icon-arrow-down el-icon--right"></i>
+        </el-button>
+        <el-dropdown-menu slot="dropdown">
+          <div class="max-h-80 overflow-y-auto">
+            <el-dropdown-item>2021</el-dropdown-item>
+            <el-dropdown-item>2020</el-dropdown-item>
+          </div>
+        </el-dropdown-menu>
+      </el-dropdown>
+      <el-dropdown>
+        <el-button
+          size="medium"
+          class="
+            mr-2
+            font-semibold
+            text-black
+            border-gray-400
+            hover:bg-gray-300
+            hover:text-black
+            hover:border-gray-300
+            focus:bg-gray-50
+            focus:border-gray-400
+            focus:text-black
+          "
+        >
+          Ҳудуд бўйича<i class="el-icon-arrow-down el-icon--right"></i>
+        </el-button>
+        <el-dropdown-menu slot="dropdown">
+          <div class="max-h-80 overflow-y-auto">
+            <el-dropdown-item>2021</el-dropdown-item>
+            <el-dropdown-item>2020</el-dropdown-item>
+          </div>
+        </el-dropdown-menu>
+      </el-dropdown>
     </div>
     <el-table
       ref="singleTable"
@@ -125,10 +175,10 @@
       highlight-current-row
       style="width: 100%; max-width: 1500px"
     >
-      <el-table-column type="index" width="50"> </el-table-column>
-      <el-table-column property="docName" label="Ҳужжат номи">
+      <el-table-column type="index" width="50" fixed> </el-table-column>
+      <el-table-column property="docName" label="Ҳужжат номи" min-width="500" fixed>
         <template slot-scope="scope">
-          <router-link :to="`/file/${1}`" class="hover:text-blue-700">
+          <router-link :to="`/file/${1}`" class="hover:text-blue-700 leading-4 lg:leading-normal">
             {{ scope.row.docName }}
           </router-link>
         </template>
@@ -272,16 +322,10 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.overflow-y-auto::-webkit-scrollbar {
-  width: 5px;
-  position: absolute;
-  right: 0;
-}
-
-.overflow-y-auto::-webkit-scrollbar-thumb {
-  margin-left: 100px;
-  border-radius: 5px;
-  background: #cccccc;
+<style>
+@media screen and (min-width: 1280px) {
+  .doc{
+    width: calc(100vw - 110px) !important;
+  }
 }
 </style>

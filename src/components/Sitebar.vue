@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="hidden xl:block">
   <div
     class="bg-white fixed right-0 h-screen top-0 border-l p-6 pr-0 z-10 right"
   >
@@ -150,7 +150,7 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
+<style scoped>
 .right {
   width: 300px;
 }

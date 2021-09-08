@@ -1,274 +1,175 @@
 <template>
-  <div class="home p-2 mt-2">
-    <Sitebar />
-    <Home1 />
-    <div class="my-10">
-      <apexchart
-        type="bar"
-        height="350"
-        :options="chartOptions"
-        :series="series"
-      ></apexchart>
-    </div>
-    <div class="flex px-2 mb-10">
-      <div class="w-1/4 px-2">
-        <h1 class="text-xl mb-2">Йиллар бўйича</h1>
-        <div class="border border-gray-300 py-1 pl-2 rounded pr-1">
-          <div class="h-72 overflow-y-auto">
-            <ul>
-              <li class="mb-2">
-                <button
-                  class="
-                    border border-blue-600
-                    text-blue-600
-                    font-semibold
-                    hover:text-white
-                    hover:bg-blue-600
-                    px-3
-                    py-1.5
-                    rounded
-                  "
-                >
-                  2021
-                </button>
-                <span class="ml-2">(100)</span>
-              </li>
-              <li class="mb-2">
-                <button
-                  class="
-                    border border-blue-600
-                    text-blue-600
-                    font-semibold
-                    hover:text-white
-                    hover:bg-blue-600
-                    px-3
-                    py-1.5
-                    rounded
-                  "
-                >
-                  2021
-                </button>
-                <span class="ml-2">(100)</span>
-              </li>
-              <li class="mb-2">
-                <button
-                  class="
-                    border border-blue-600
-                    text-blue-600
-                    font-semibold
-                    hover:text-white
-                    hover:bg-blue-600
-                    px-3
-                    py-1.5
-                    rounded
-                  "
-                >
-                  2021
-                </button>
-                <span class="ml-2">(100)</span>
-              </li>
-              <li class="mb-2">
-                <button
-                  class="
-                    border border-blue-600
-                    text-blue-600
-                    font-semibold
-                    hover:text-white
-                    hover:bg-blue-600
-                    px-3
-                    py-1.5
-                    rounded
-                  "
-                >
-                  2021
-                </button>
-                <span class="ml-2">(100)</span>
-              </li>
-              <li class="mb-2">
-                <button
-                  class="
-                    border border-blue-600
-                    text-blue-600
-                    font-semibold
-                    hover:text-white
-                    hover:bg-blue-600
-                    px-3
-                    py-1.5
-                    rounded
-                  "
-                >
-                  2021
-                </button>
-                <span class="ml-2">(100)</span>
-              </li>
-              <li class="mb-2">
-                <button
-                  class="
-                    border border-blue-600
-                    text-blue-600
-                    font-semibold
-                    hover:text-white
-                    hover:bg-blue-600
-                    px-3
-                    py-1.5
-                    rounded
-                  "
-                >
-                  2021
-                </button>
-                <span class="ml-2">(100)</span>
-              </li>
-              <li class="mb-2">
-                <button
-                  class="
-                    border border-blue-600
-                    text-blue-600
-                    font-semibold
-                    hover:text-white
-                    hover:bg-blue-600
-                    px-3
-                    py-1.5
-                    rounded
-                  "
-                >
-                  2021
-                </button>
-                <span class="ml-2">(100)</span>
-              </li>
-              <li class="mb-2">
-                <button
-                  class="
-                    border border-blue-600
-                    text-blue-600
-                    font-semibold
-                    hover:text-white
-                    hover:bg-blue-600
-                    px-3
-                    py-1.5
-                    rounded
-                  "
-                >
-                  2021
-                </button>
-                <span class="ml-2">(100)</span>
-              </li>
-            </ul>
+  <div class="flex">
+    <div class="flex-1">
+      <div class="home xl:p-2 mt-2">
+        <Home1 />
+        <div class="my-6 lg:my-10">
+          <apexchart
+            type="bar"
+            height="350"
+            :options="chartOptions"
+            :series="series"
+          ></apexchart>
+        </div>
+        <div class="px-4 mb-6 lg:mb-10">
+          <div class="-mx-1.5 lg:-mx-2 flex">
+            <div class="w-1/4 px-1.5 lg:px-2">
+              <h1 class="text-xl mb-2">Йиллар бўйича</h1>
+              <div class="border border-gray-300 py-1 pl-2 rounded pr-1">
+                <div class="h-48 lg:h-72 overflow-y-auto">
+                  <ul>
+                    <li class="mb-2">
+                      <button
+                        class="
+                          border
+                          text-left
+                          border-blue-600
+                          text-blue-600
+                          lg:font-semibold
+                          hover:text-white
+                          hover:bg-blue-600
+                          px-2.5
+                          lg:px-3
+                          py-1
+                          lg:py-1.5
+                          rounded
+                        "
+                      >
+                        2021
+                      </button>
+                      <span class="ml-2">(100)</span>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="w-1/3 px-1.5 lg:px-2">
+              <h1 class="text-xl mb-2">Шакли бўйича</h1>
+              <div class="border border-gray-300 py-1 pl-2 rounded pr-1">
+                <div class="h-48 lg:h-72 overflow-y-auto">
+                  <ul>
+                    <li class="mb-2">
+                      <button
+                        class="
+                          border
+                          text-left
+                          border-blue-600
+                          text-blue-600
+                          lg:font-semibold
+                          hover:text-white
+                          hover:bg-blue-600
+                          px-2.5
+                          lg:px-3
+                          py-1
+                          lg:py-1.5
+                          rounded
+                        "
+                      >
+                        Qonun
+                      </button>
+                      <span class="ml-2">(100)</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="w-5/12 px-1.5 lg:px-2">
+              <h1 class="text-xl mb-2">Департамент бўйича</h1>
+              <div class="border border-gray-300 py-1 pl-2 rounded pr-1">
+                <div class="h-48 lg:h-72 overflow-y-auto">
+                  <ul>
+                    <li class="mb-2 items-center flex">
+                      <button
+                        class="
+                          dep
+                          text-left
+                          border border-blue-600
+                          text-blue-600
+                          lg:font-semibold
+                          hover:text-white
+                          hover:bg-blue-600
+                          px-2.5
+                          lg:px-3
+                          py-1
+                          lg:py-1.5
+                          rounded
+                          text-sm
+                          lg:text-base
+                        "
+                      >
+                        departament departament departament
+                      </button>
+                      <span class="ml-2 mr-1">(1000000)</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="w-1/3 px-2">
-        <h1 class="text-xl mb-2">Шакли бўйича</h1>
-        <div class="border border-gray-300 py-1 pl-2 rounded pr-1">
-          <div class="h-72 overflow-y-auto">
-            <ul>
-              <li class="mb-2">
-                <button
-                  class="
-                    border border-blue-600
-                    text-blue-600
-                    font-semibold
-                    hover:text-white
-                    hover:bg-blue-600
-                    px-3
-                    py-1.5
-                    rounded
-                  "
-                >
-                  Qonun
-                </button>
-                <span class="ml-2">(100)</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="w-5/12 px-2">
-        <h1 class="text-xl mb-2">Департамент бўйича</h1>
-        <div class="border border-gray-300 py-1 pl-2 rounded pr-1">
-          <div class="h-72 overflow-y-auto">
-            <ul>
-              <li class="mb-2 items-center flex">
-                <button
-                  class="
-                    dep
-                    text-left
-                    border border-blue-600
-                    text-blue-600
-                    font-semibold
-                    hover:text-white
-                    hover:bg-blue-600
-                    px-3
-                    py-1.5
-                    rounded
-                  "
-                >
-                  departament departament departament
-                </button>
-                <span class="ml-2 mr-1">(1000000)</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <el-table
-      class="mb-10"
-      ref="singleTable"
-      :data="malumot"
-      highlight-current-row
-      style="width: 100%; max-width: 1536px"
-    >
-      <el-table-column type="index" width="50"> </el-table-column>
-      <el-table-column property="docName" label="Ҳужжат номи">
-        <template slot-scope="scope">
-          <router-link :to="`/file/${1}`" class="hover:text-blue-700">
-            {{ scope.row.docName }}
-          </router-link>
-        </template>
-      </el-table-column>
-      <el-table-column property="docNum" label="Ҳужжат" width="75">
-      </el-table-column>
-      <el-table-column property="opNum" label="Опись" width="65">
-      </el-table-column>
-      <el-table-column property="fondNum" label="Фонд" width="65">
-      </el-table-column>
-      <el-table-column property="krNum" label="Кирим" width="65">
-      </el-table-column>
-      <el-table-column property="YJNum" label="Йиғмажилд" width="100">
-      </el-table-column>
-      <el-table-column property="date1" label="Сана" width="100">
-      </el-table-column>
-      <el-table-column prop="type" label="Ҳолати" width="70">
-        <template slot-scope="scope">
-          <div
-            class="w-6 h-6 flex items-center justify-center rounded-3xl"
-            :class="[scope.row.type === 'pas' ? 'bg-red-600' : 'bg-green-600']"
+        <div class="tabs">
+          <el-table
+            class="mb-10"
+            ref="singleTable"
+            :data="malumot"
+            highlight-current-row
+            style="width: 100%; max-width: 1536px"
           >
-            <i
-              class="cursor-pointer text-white"
-              :class="[scope.row.type === 'pas' ? 'ti-close' : 'ti-check']"
-              :title="[
-                scope.row.type === 'pas' ? 'Ўз кучини йўқотган' : 'Амалда',
-              ]"
-            ></i>
-          </div>
-        </template>
-      </el-table-column>
-      <el-table-column property="lll" label="" width="40">
-        <i class="ti-eye cursor-pointer"></i>
-      </el-table-column>
-    </el-table>
+            <el-table-column type="index" width="50" fixed> </el-table-column>
+            <el-table-column property="docName" label="Ҳужжат номи" min-width="300" fixed>
+              <template slot-scope="scope">
+                <router-link :to="`/file/${1}`" class="hover:text-blue-700">
+                  {{ scope.row.docName }}
+                </router-link>
+              </template>
+            </el-table-column>
+            <el-table-column property="docNum" label="Ҳужжат" width="75">
+            </el-table-column>
+            <el-table-column property="opNum" label="Опись" width="65">
+            </el-table-column>
+            <el-table-column property="fondNum" label="Фонд" width="65">
+            </el-table-column>
+            <el-table-column property="krNum" label="Кирим" width="65">
+            </el-table-column>
+            <el-table-column property="YJNum" label="Йиғмажилд" width="100">
+            </el-table-column>
+            <el-table-column property="date1" label="Сана" width="100">
+            </el-table-column>
+            <el-table-column prop="type" label="Ҳолати" width="70">
+              <template slot-scope="scope">
+                <div
+                  class="w-6 h-6 flex items-center justify-center rounded-3xl"
+                  :class="[
+                    scope.row.type === 'pas' ? 'bg-red-600' : 'bg-green-600',
+                  ]"
+                >
+                  <i
+                    class="cursor-pointer text-white"
+                    :class="[scope.row.type === 'pas' ? 'ti-close' : 'ti-check']"
+                    :title="[
+                      scope.row.type === 'pas' ? 'Ўз кучини йўқотган' : 'Амалда',
+                    ]"
+                  ></i>
+                </div>
+              </template>
+            </el-table-column>
+            <el-table-column property="lll" label="" width="40">
+              <i class="ti-eye cursor-pointer"></i>
+            </el-table-column>
+          </el-table>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import Home1 from "../components/Home1.vue";
-import Sitebar from "@/components/Sitebar.vue";
 export default {
   name: "Home",
   components: {
     Home1,
-    Sitebar,
   },
   data() {
     return {
@@ -390,21 +291,15 @@ export default {
 </script>
 
 <style scoped>
-.home {
-  padding-right: 308px;
-}
-.overflow-y-auto::-webkit-scrollbar {
-  width: 5px;
-  position: absolute;
-  right: 0;
-}
-
-.overflow-y-auto::-webkit-scrollbar-thumb {
-  margin-left: 100px;
-  border-radius: 5px;
-  background: #cccccc;
-}
 .dep {
   max-width: 80%;
+}
+.tabs{
+  width: calc(100vw - 426px);
+}
+@media screen and (max-width: 1279px) {
+  .tabs{
+    width: 100vw;
+  }
 }
 </style>
